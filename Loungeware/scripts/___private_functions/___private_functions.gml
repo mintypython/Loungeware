@@ -56,11 +56,15 @@ function ___axis_check(_keystr){
 	return false;
 }
 
+function ___mouse_check(_keystr) {
+	return ___obj_mouse.held[$ _keystr];
+}
+
 //--------------------------------------------------------------------------------------------------------
 // checks if gamepad button, axis, or key is held using ___global.curr_input_keys. provide a string as the property name for key type
 //--------------------------------------------------------------------------------------------------------
 function ___macro_any_check(_keystr){
-	return 	___keyboard_check(_keystr) || ___gamepad_check(_keystr) || ___axis_check(_keystr);
+	return 	___keyboard_check(_keystr) || ___gamepad_check(_keystr) || ___axis_check(_keystr) || ___mouse_check(_keystr);
 }
 
 function ___keyboard_check_pressed(_keystr){
@@ -100,8 +104,12 @@ function ___axis_check_pressed(_keystr){
 	return false;
 }
 
+function ___mouse_check_pressed(_keystr) {
+	return ___obj_mouse.pressed[$ _keystr];
+}
+
 function ___macro_any_check_pressed(_keystr){
-	return 	___keyboard_check_pressed(_keystr) || ___gamepad_check_pressed(_keystr) || ___axis_check_pressed(_keystr);
+	return 	___keyboard_check_pressed(_keystr) || ___gamepad_check_pressed(_keystr) || ___axis_check_pressed(_keystr) || ___mouse_check_pressed(_keystr);
 }
 
 function ___keyboard_check_released(_keystr){
@@ -141,8 +149,12 @@ function ___axis_check_released(_keystr){
 	return false;	
 }
 
+function ___mouse_check_released(_keystr) {
+	return ___obj_mouse.released[$ _keystr];
+}
+
 function ___macro_any_check_released(_keystr){
-	return 	___keyboard_check_released(_keystr) || ___gamepad_check_released(_keystr) || ___axis_check_released(_keystr);
+	return 	___keyboard_check_released(_keystr) || ___gamepad_check_released(_keystr) || ___axis_check_released(_keystr) || ___mouse_check_released(_keystr);
 }
 
 // ------------------------------------------------------------------------------------------

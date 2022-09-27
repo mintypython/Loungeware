@@ -7,6 +7,9 @@ function ___GAME_INIT(){
 	if (instance_exists(___global)) instance_destroy(___global);
 	instance_create_layer(0, 0, layer, ___global);
 	
+	if (!instance_exists(___obj_mouse))
+		instance_create_layer(0, 0, layer, ___obj_mouse);
+	
 	___global.developer_mode_active = !CONFIG_IS_SHIPPING && !CONFIG_IS_RASPI && file_exists(___DEV_CONFIG_PATH);
 	___global.window_base_size = 540;
 	___global.gallery_goto_key = "";

@@ -39,6 +39,10 @@ var _v_sep = 16;
 var _h_sep = 1;
 draw_set_halign(fa_center);
 
+var msel = ___mouse_select_list(menu, 0, _yy, VIEW_W, 30);
+if (msel > -1)
+	cursor = msel;
+		
 for (var i = 0; i < array_length(menu); i++){
 	_selected = (cursor == i);
 	_scale_final = _scale;
@@ -100,6 +104,12 @@ if (yy_mod < 0){
 	var _list_total_h = 0;
 	var _gamelist_y = _yy + scroll_y;
 	
+	if (fadeout_alpha <= 0) {
+		var msel = ___mouse_select_list(game_keylist, 0, _yy + scroll_y, VIEW_W, _v_sep);
+		if (msel > -1)
+			cursor2 = msel;
+	}
+		
 	for (var i = 0; i < array_length(game_keylist); i++){
 		var _store_y = _gamelist_y;
 		_selected = (cursor2 == i);

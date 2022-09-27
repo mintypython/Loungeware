@@ -19,6 +19,7 @@ if (room == microgame_current_metadata.init_room && !microgame_initiated){
 		___MG_MNGR.microgame_time_finished =  ___MG_MNGR.microgame_timer_max;
 	}
 	microgame_initiated = true;
+	___obj_mouse.spawn_buttons();
 }
 
 // any microgame room (this incudes the init room and any subsequent rooms used for the microgame)

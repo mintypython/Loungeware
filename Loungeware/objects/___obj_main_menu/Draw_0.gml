@@ -32,6 +32,10 @@ draw_sprite_ext(___spr_logo_title, 1, _logo_x, _logo_y, logo_scale, logo_scale, 
 // draw meu
 var _text_x = VIEW_W/2;
 var _text_y = menu_y - 16;
+
+var msel = ___mouse_select_list(menu, 0, _text_y, VIEW_W, 35);
+if (msel > -1)
+	cursor = msel;
 	
 ____menu_text_vertical_draw(
 	_text_x,
